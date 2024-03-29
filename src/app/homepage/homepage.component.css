@@ -1,10 +1,76 @@
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  color: black;
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Basic styling for the container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 20%;
+}
+
+/* Main content styling */
 .main-content {
+  width: 75%;
+}
+
+/* Button styling */
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: darkseagreen;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   text-align: center;
-  margin-top: 50px;
+}
+
+/* Button hover effect */
+.button:hover {
+  background-color: #2980b9;
+}
+
+/* Schedule styling */
+.schedule {
+  /* Add your styles for the schedule/calendar here */
+}
+
+/* Additional buttons styling */
+.buttons {
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar, .main-content {
+    width: 100%;
+  }
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: #f2f2f2;
 }
