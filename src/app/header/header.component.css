@@ -5,11 +5,11 @@ header {
   align-items: center;
   text-align: center;
   z-index: 1000;
-  background-color: white;
+  background-color: #92C7CF;
 }
 
 h1 {
-  color: black;
+  color: #FBF9F1;
   margin: 0;
 }
 
@@ -17,7 +17,7 @@ nav {
   margin-top: 10px;
 }
 nav a {
-  color: black;
+  color: #FBF9F1;
   text-decoration: none;
   margin: 0 10px;
 }

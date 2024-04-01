@@ -30,7 +30,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: darkseagreen;
+  background-color: #92C7CF;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -40,7 +40,7 @@
 
 /* Button hover effect */
 .button:hover {
-  background-color: #2980b9;
+  background-color: #4a9da9;
 }
 
 /* Schedule styling */

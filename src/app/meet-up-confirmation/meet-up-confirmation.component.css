@@ -5,7 +5,7 @@
 
 .accept-btn,
 .reject-btn {
-    background-color: #007bff;
+    background-color: #92C7CF;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -17,7 +17,7 @@
 
 .accept-btn:hover,
 .reject-btn:hover {
-    background-color: #0056b3;
+    background-color: #4a9da9;
 }
 
 .streak {
