@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomepageComponent
   },
   {
-  path: "M",
+  path: "meetup",
   component: MeetUpConfirmationComponent
   }
 ];

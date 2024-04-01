@@ -1,11 +1,9 @@
-/* Resetting default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Basic styling for the container */
 .container {
   display: flex;
   justify-content: space-between;
@@ -14,17 +12,14 @@
   padding: 20px;
 }
 
-/* Sidebar styling */
 .sidebar {
   width: 20%;
 }
 
-/* Main content styling */
 .main-content {
   width: 75%;
 }
 
-/* Button styling */
 .button {
   display: block;
   width: 100%;
@@ -38,22 +33,14 @@
   text-align: center;
 }
 
-/* Button hover effect */
 .button:hover {
   background-color: #4a9da9;
 }
 
-/* Schedule styling */
-.schedule {
-  /* Add your styles for the schedule/calendar here */
-}
-
-/* Additional buttons styling */
 .buttons {
   margin-top: 20px;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
