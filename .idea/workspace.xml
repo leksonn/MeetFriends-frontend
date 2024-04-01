@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="79cb13fa-60ef-4c05-8fb1-0879285e4d4a" name="Changes" comment="Added Footer/Header/Homepage Updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/footer/footer.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <workItem from="1711612846373" duration="85000" />
       <workItem from="1711613089481" duration="8000" />
       <workItem from="1711613335764" duration="122000" />
-      <workItem from="1711728889968" duration="7838000" />
+      <workItem from="1711728889968" duration="8482000" />
     </task>
     <task id="LOCAL-00001" summary="Added Footer/Header/Homepage Updates">
       <option name="closed" value="true" />
@@ -119,6 +118,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/main" />
@@ -144,7 +148,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
