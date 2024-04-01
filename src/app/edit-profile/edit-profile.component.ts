@@ -20,5 +20,6 @@ export class EditProfileComponent {
 
   submitForm() {
     console.log(this.form.value);
+    
   }
 }
