@@ -34,3 +34,9 @@ nav a:hover {
   font-weight: bold;
 }
 
+a{
+  cursor: pointer;
+}
+
+
+

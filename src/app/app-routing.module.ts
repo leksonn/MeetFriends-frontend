@@ -5,13 +5,14 @@ import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confir
 
 const routes: Routes = [
   {
-    path: "",
+    path: "home",
     component: HomepageComponent
   },
   {
   path: "meetup",
   component: MeetUpConfirmationComponent
   }
+
 ];
 
 @NgModule({
