@@ -24,7 +24,10 @@ export class HomepageComponent implements OnInit{
   }
 
 
-  redirectToCheck() {
+  redirectToCheck() :void{
     this.router.navigate(['/pending'])
+  }
+  redirectToFriends():void{
+    this.router.navigate(['/friends'])
   }
 }

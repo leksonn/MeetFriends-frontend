@@ -23,6 +23,9 @@ import {requestService} from './pending-meetup-requests/pending-meetup-requests.
 import {MeetUpConfirmationServices} from "./sevices/meet-up-confirmation.service";
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './sevices/login.service';
+import {FriendlistService} from "./sevices/friendlist.service";
+import { FriendlistComponent } from './friendlist/friendlist.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { LoginService } from './sevices/login.service';
     FooterComponent,
     MeetUpRequestComponent,
     PendingMeetupRequestsComponent,
+    FriendlistComponent
     
   ],
   imports: [
@@ -46,7 +50,8 @@ import { LoginService } from './sevices/login.service';
     MatButtonModule,
     MatCardModule,
     MatListModule,
-    LoginComponent
+    LoginComponent,
+
   ],
   providers: [
       provideNativeDateAdapter(),
@@ -54,7 +59,8 @@ import { LoginService } from './sevices/login.service';
     provideAnimationsAsync(),
     MeetUpConfirmationServices,
     requestService,
-    LoginService
+    LoginService,
+    FriendlistService
   ],
   bootstrap: [AppComponent]
 })
