@@ -1,9 +1,10 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import {HomepageComponent} from "./homepage/homepage.component";
-import {MeetUpRequestComponent} from './meet-up-request/meet-up-request.component';
-import {PendingMeetupRequestsComponent} from './pending-meetup-requests/pending-meetup-requests.component';
 import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confirmation.component";
+import { AddFriendsComponent } from './add-friends/add-friends.component';
+import {MeetUpRequestComponent} from "./meet-up-request/meet-up-request.component";
+import {PendingMeetupRequestsComponent} from "./pending-meetup-requests/pending-meetup-requests.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "pending",
     component: PendingMeetupRequestsComponent
+  },
+  {
+    path: "addfriends",
+    component: AddFriendsComponent
   }
 ];
 
