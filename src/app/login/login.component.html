@@ -1,0 +1,25 @@
+<div class="login-container">
+    <div class="login-box">
+        <mat-tab-group>
+            <mat-tab label="Login">
+                <form [formGroup]="form" (ngSubmit)="submitLogin()" >
+                    <input formControlName="username" type="text" placeholder="Username" required>
+                    <input formControlName="password" type="password" placeholder="Password" required>
+                    <button  type="submit">Login</button>
+                </form>
+                <button (click)="getUsers()">test</button>
+            </mat-tab>
+            <mat-tab label="Signup">
+                <form [formGroup]="form2" (ngSubmit)="submitSignup()">
+                    <input formControlName="username"  type="text" id="username" name="username" placeholder="username" required>
+                    <input formControlName="password" type="password" id="password" name="password" placeholder="password" required>
+                    <input formControlName="confirmpass" type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required>
+                    <input formControlName="email" type="email" placeholder="E-mail" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+</div>

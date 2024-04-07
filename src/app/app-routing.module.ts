@@ -4,6 +4,7 @@ import {HomepageComponent} from "./homepage/homepage.component";
 import {MeetUpRequestComponent} from './meet-up-request/meet-up-request.component';
 import {PendingMeetupRequestsComponent} from './pending-meetup-requests/pending-meetup-requests.component';
 import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confirmation.component";
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "request",
     component: MeetUpRequestComponent
+  },
+  {
+    path: "",
+    component: LoginComponent
   },
   {
     path: "pending",
