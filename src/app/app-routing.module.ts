@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomepageComponent} from "./homepage/homepage.component";
 import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confirmation.component";
+import { MeetUpRequestComponent } from './meet-up-request/meet-up-request.component';
+import { PendingMeetupRequestsComponent } from './pending-meetup-requests/pending-meetup-requests.component';
 
 const routes: Routes = [
   {
@@ -11,8 +13,15 @@ const routes: Routes = [
   {
   path: "meetup",
   component: MeetUpConfirmationComponent
+  },
+  {
+    path: "request",
+    component: MeetUpRequestComponent
+  },
+  {
+    path: "pending",
+    component: PendingMeetupRequestsComponent
   }
-
 ];
 
 @NgModule({

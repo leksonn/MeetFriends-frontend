@@ -1,0 +1,8 @@
+<mat-card>
+<mat-card-header>Pending Meetup Requests</mat-card-header>
+    <mat-card-content>
+    <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let request of allRequests">{{request.username}} : {{request.date}} : {{request.time}} - {{request.timeUntil}} : {{request.place}} : {{request.description}}</mat-list-item>
+</mat-list>
+    </mat-card-content>
+</mat-card>
