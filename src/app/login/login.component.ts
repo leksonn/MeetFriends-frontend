@@ -30,12 +30,8 @@ export class LoginComponent {
         }
     )
   }
-  getUsers():void{
-    console.log("first"+this.form.value.username)
-    console.log(this.service.getLoginInfo(this.form.value.username))
-  }
-
-
+  
+  
   submitSignup() {
     console.log(this.form2.value)
   }
