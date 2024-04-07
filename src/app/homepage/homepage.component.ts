@@ -19,6 +19,12 @@ export class HomepageComponent implements OnInit{
   redirectToMeetup(): void {
     this.router.navigate(['/meetup']);
   }
+  redirectToSend():void{
+    this.router.navigate(['/request'])
+  }
 
 
+  redirectToCheck() {
+    this.router.navigate(['/pending'])
+  }
 }

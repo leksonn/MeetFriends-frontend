@@ -21,7 +21,8 @@ import {PendingMeetupRequestsComponent} from './pending-meetup-requests/pending-
 import {MatListModule} from '@angular/material/list';
 import {requestService} from './pending-meetup-requests/pending-meetup-requests.service';
 import {MeetUpConfirmationServices} from "./sevices/meet-up-confirmation.service";
-
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './sevices/login.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MeetUpConfirmationServices} from "./sevices/meet-up-confirmation.service
     MeetUpConfirmationComponent,
     FooterComponent,
     MeetUpRequestComponent,
-    PendingMeetupRequestsComponent
+    PendingMeetupRequestsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,15 +45,16 @@ import {MeetUpConfirmationServices} from "./sevices/meet-up-confirmation.service
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
-
+    MatListModule,
+    LoginComponent
   ],
   providers: [
       provideNativeDateAdapter(),
     provideClientHydration(),
     provideAnimationsAsync(),
     MeetUpConfirmationServices,
-    requestService
+    requestService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
