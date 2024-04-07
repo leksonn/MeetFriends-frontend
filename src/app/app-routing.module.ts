@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomepageComponent} from "./homepage/homepage.component";
+import {MeetUpRequestComponent} from './meet-up-request/meet-up-request.component';
+import {PendingMeetupRequestsComponent} from './pending-meetup-requests/pending-meetup-requests.component';
 import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confirmation.component";
-import { MeetUpRequestComponent } from './meet-up-request/meet-up-request.component';
-import { PendingMeetupRequestsComponent } from './pending-meetup-requests/pending-meetup-requests.component';
 
 const routes: Routes = [
   {

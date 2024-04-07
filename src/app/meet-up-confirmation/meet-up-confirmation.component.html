@@ -1,10 +1,20 @@
-
-<div class="invitation">
-    <p>You have received an invitation from a friend.</p>
-    <button class="accept-btn">Accept</button>
-    <button class="reject-btn">Reject</button>
-</div>
-
-<div class="streak">
-    <p> Your meetup streak with this friend: <span class="streak-count">3</span> times</p>
+<div class="grid-container">
+    <div class="row">
+        <div class="part">
+            <div class="container">
+                <h2 class="streak"> Meet up streak is <br> {{ getStreak() }}</h2>
+            </div>
+        </div>
+        <div class="part">You have been meeting for how many days<br>*when connected to the base*</div>
+        <div class="part">Graph will go here</div>
+    </div>
+    <div class="row">
+        <div class="part part2">
+            <div class="invitation">
+                <p>Did your meetup happen?</p>
+                <button class="accept-btn" (click)="increaseStreak()">Yes</button>
+                <button class="reject-btn" >No</button>
+            </div>
+        </div>
+    </div>
 </div>

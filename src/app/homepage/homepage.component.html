@@ -1,113 +1,20 @@
-<div class="container">
-    <div class="sidebar">
-        <button class="button"> Check Requests </button>
-        <button class="button"> Send Request </button>
-        <button class="button"> View friends </button>
+<mat-tab-group >
+    <mat-tab label="My schedule"> <div class="position">
+        <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">View Scheduled</button>
+    </div> </mat-tab>
+    <mat-tab label="Check Requests"><div class="position">
+        <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">Do you have any new request?</button>
     </div>
-    <div class="main-content">
-        <div class="schedule">
-            <h2>Weekly Schedule</h2>
-            <table>
-                <tr>
-                    <th>Time</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                </tr>
-                <tr>
-                    <td>9:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                    <td>10:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr><tr>
-                <td>11:00 AM</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-            </tr>
-                <tr>
-                    <td>12:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                    <td>13:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                    <td>14:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                    <td>15:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                    <td>16:00 AM</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                    <td>Activity</td>
-                </tr>
-                <tr>
-                <td>17:00 AM</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-                <td>Activity</td>
-            </tr>
-            </table>
-        </div>
-    </div>
-</div>
+    </mat-tab>
+    <mat-tab label="Send Request"> <div class="position">
+        <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">Want to meet up?</button>
+    </div> </mat-tab>
+
+    <mat-tab label="View Friends">  <div class="position">
+        <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">List of your friends</button>
+    </div></mat-tab>
+
+    <mat-tab label="My streak">  <div class="position">
+        <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">Check Streak</button>
+    </div></mat-tab>
+</mat-tab-group>
