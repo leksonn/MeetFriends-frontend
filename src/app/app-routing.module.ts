@@ -5,7 +5,6 @@ import {MeetUpConfirmationComponent} from "./meet-up-confirmation/meet-up-confir
 import { AddFriendsComponent } from './add-friends/add-friends.component';
 import {MeetUpRequestComponent} from "./meet-up-request/meet-up-request.component";
 import {PendingMeetupRequestsComponent} from "./pending-meetup-requests/pending-meetup-requests.component";
-
 const routes: Routes = [
   {
     path: "home",
@@ -16,17 +15,18 @@ const routes: Routes = [
   component: MeetUpConfirmationComponent
   },
   {
+    path: "addfriends",
+    component: AddFriendsComponent
+  },
+  {
     path: "request",
     component: MeetUpRequestComponent
   },
   {
     path: "pending",
     component: PendingMeetupRequestsComponent
-  },
-  {
-    path: "addfriends",
-    component: AddFriendsComponent
   }
+
 ];
 
 @NgModule({
