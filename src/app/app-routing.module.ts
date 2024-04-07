@@ -11,8 +11,8 @@ const routes: Routes = [
     component: HomepageComponent
   },
   {
-  path: "meetup",
-  component: MeetUpConfirmationComponent
+    path: "meetup",
+    component: MeetUpConfirmationComponent
   },
   {
     path: "addfriends",
