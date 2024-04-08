@@ -25,6 +25,7 @@ import {LoginService} from './sevices/login.service';
 import {FriendlistService} from "./sevices/friendlist.service";
 import {FriendlistComponent} from './friendlist/friendlist.component';
 import {requestService} from "./pending-meetup-requests/pending-meetup-requests.service";
+import {AddFriendsService} from "./sevices/add-friends.service";
 
 
 @NgModule({
@@ -38,7 +39,6 @@ import {requestService} from "./pending-meetup-requests/pending-meetup-requests.
         FriendlistComponent,
         PendingMeetupRequestsComponent,
         MeetUpRequestComponent,
-        AddFriendsComponent,
         EditProfileComponent
     ],
     imports: [
@@ -60,7 +60,9 @@ import {requestService} from "./pending-meetup-requests/pending-meetup-requests.
         MatButtonModule,
         MatCardModule,
         MatListModule,
-        LoginComponent
+        LoginComponent,
+        AddFriendsComponent,
+
     ],
     providers: [
         provideClientHydration(),
@@ -72,7 +74,8 @@ import {requestService} from "./pending-meetup-requests/pending-meetup-requests.
         FriendlistService,
         MeetUpConfirmationServices,
         requestService,
-        LoginService
+        LoginService,
+        AddFriendsService
     ],
     bootstrap: [AppComponent]
 })
