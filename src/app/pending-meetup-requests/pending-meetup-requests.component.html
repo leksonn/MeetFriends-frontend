@@ -1,8 +1,138 @@
-<mat-card>
-<mat-card-header>Pending Meetup Requests</mat-card-header>
-    <mat-card-content>
-    <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let request of allRequests">{{request.username}} : {{request.date}} : {{request.time}} - {{request.timeUntil}} : {{request.place}} : {{request.description}}</mat-list-item>
-</mat-list>
-    </mat-card-content>
-</mat-card>
+<div class="container">
+    <h1>Pending Meetup Requests</h1>
+
+    <!-- Create Request Form -->
+    <div class="create-form">
+        <h2>Create New Request</h2>
+        <form (ngSubmit)="createRequest()">
+            <div>
+                <label for="newSender">Sender</label>
+                <input id="newSender" [(ngModel)]="newRequest.sender" name="newSender" required>
+            </div>
+            <div>
+                <label for="newReceiver">Receiver</label>
+                <input id="newReceiver" [(ngModel)]="newRequest.receiver" name="newReceiver" required>
+            </div>
+            <div>
+                <label for="newDetails">Details</label>
+                <textarea id="newDetails" [(ngModel)]="newRequest.details" name="newDetails" required></textarea>
+            </div>
+            <div>
+                <label for="newMeetupTime">Meetup Time</label>
+                <input id="newMeetupTime" [(ngModel)]="newRequest.meetup_time" name="newMeetupTime" required>
+            </div>
+            <div>
+                <button type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Existing Requests Table -->
+    <div *ngIf="requests.length === 0">
+        <p>No requests available.</p>
+    </div>
+    <div *ngIf="requests.length > 0">
+        <table>
+            <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Details</th>
+                <th>Meetup Time</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let request of requests">
+                <td>{{ request.sender }}</td>
+                <td>{{ request.receiver }}</td>
+                <td>{{ request.details }}</td>
+                <td>{{ request.meetup_time }}</td>
+                <td>
+                    <button (click)="startEdit(request)">Edit</button>
+                    <button (click)="deleteRequest(request.id)">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Edit Request Form -->
+    <div *ngIf="editingRequest" class="edit-form">
+        <h2>Edit Request</h2>
+        <form (ngSubmit)="saveEdit()">
+            <div>
+                <label for="sender">Sender</label>
+                <input id="sender" [(ngModel)]="editingRequest.sender" name="sender" required>
+            </div>
+            <div>
+                <label for="receiver">Receiver</label>
+                <input id="receiver" [(ngModel)]="editingRequest.receiver" name="receiver" required>
+            </div>
+            <div>
+                <label for="details">Details</label>
+                <textarea id="details" [(ngModel)]="editingRequest.details" name="details" required></textarea>
+            </div>
+            <div>
+                <label for="meetup_time">Meetup Time</label>
+                <input id="meetup_time" [(ngModel)]="editingRequest.meetup_time" name="meetup_time" required>
+            </div>
+            <div>
+                <button type="submit">Save</button>
+                <button type="button" (click)="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Add some basic styling -->
+<style>
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    h1, h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+
+    .create-form, .edit-form {
+        margin-top: 20px;
+    }
+
+    .create-form form div, .edit-form form div {
+        margin-bottom: 10px;
+    }
+
+    .create-form form label, .edit-form form label {
+        display: block;
+    }
+
+    .create-form form input, .create-form form textarea,
+    .edit-form form input, .edit-form form textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+
+    .create-form form button, .edit-form form button {
+        margin-right: 10px;
+    }
+</style>
