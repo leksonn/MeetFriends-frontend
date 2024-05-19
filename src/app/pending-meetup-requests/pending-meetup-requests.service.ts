@@ -1,34 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { RequestDTO } from "../Models/request-dto";
+import { Injectable } from "@angular/core";
+import { Observable, of } from "rxjs";
 
-@Injectable({
-    providedIn: 'root'
-})
-export class RequestService {
-    private apiUrl = 'http://localhost:8080/api/requests';
-
-    constructor(private http: HttpClient) { }
-
-    getRequests(): Observable<RequestDTO[]> {
-        return this.http.get<RequestDTO[]>(this.apiUrl);
-    }
-
-    getRequestById(id: number): Observable<RequestDTO> {
-        return this.http.get<RequestDTO>(`${this.apiUrl}/${id}`);
-    }
-
-    createRequest(request: RequestDTO): Observable<void> {
-        return this.http.post<void>(this.apiUrl, request);
-    }
-
-    updateRequest(request: RequestDTO): Observable<void> {
-        return this.http.put<void>(this.apiUrl, request);
-    }
-
-    deleteRequest(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
-    }
+@Injectable()
+export class requestService {
+public getRequests(): Observable<any[]> {
+    return of([
+        {username: 'Darin', date: '8.4.2024', time: '16:00', timeUntil: '21:00', place: 'Ilidza', description: 'pojest popit stagod'},
+        {username: 'Dzani', date: '12.4.2024', time: '19:00', timeUntil: '23:00', place: 'Pofalici', description: 'popit i samo popit stagod'},
+        {username: 'Tajanstveni', date: '23.4.2024', time: '13:00', timeUntil: '15:00', place: 'SSST', description: 'tajanstveni razlozi'}
+    ])
 }
-
+}

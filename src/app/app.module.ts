@@ -24,9 +24,8 @@ import {MeetUpConfirmationServices} from "./sevices/meet-up-confirmation.service
 import {LoginService} from './sevices/login.service';
 import {FriendlistService} from "./sevices/friendlist.service";
 import {FriendlistComponent} from './friendlist/friendlist.component';
-import {RequestService} from "./pending-meetup-requests/pending-meetup-requests.service";
+import {requestService} from "./pending-meetup-requests/pending-meetup-requests.service";
 import {AddFriendsService} from "./sevices/add-friends.service";
-import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -38,11 +37,11 @@ import {HttpClientModule} from "@angular/common/http";
         MeetUpRequestComponent,
         PendingMeetupRequestsComponent,
         FriendlistComponent,
+        PendingMeetupRequestsComponent,
         MeetUpRequestComponent,
         EditProfileComponent
     ],
     imports: [
-        HttpClientModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,
@@ -70,10 +69,11 @@ import {HttpClientModule} from "@angular/common/http";
         provideAnimationsAsync(),
         provideNativeDateAdapter(),
         MeetUpConfirmationServices,
-        RequestService,
+        requestService,
         LoginService,
         FriendlistService,
         MeetUpConfirmationServices,
+        requestService,
         LoginService,
         AddFriendsService
     ],
