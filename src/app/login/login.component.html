@@ -1,24 +1,90 @@
+<!-- src/app/login/login.component.html -->
 <div class="login-container">
     <div class="login-box">
         <mat-tab-group>
             <mat-tab label="Login">
-                <form [formGroup]="form" (ngSubmit)="submitLogin()" >
+                <form [formGroup]="form" (ngSubmit)="submitLogin()">
                     <input formControlName="username" type="text" placeholder="Username" required>
                     <input formControlName="password" type="password" placeholder="Password" required>
-                    <button  type="submit">Login</button>
+                    <button type="submit">Login</button>
                 </form>
             </mat-tab>
             <mat-tab label="Signup">
                 <form [formGroup]="form2" (ngSubmit)="submitSignup()">
-                    <input formControlName="username"  type="text" id="username" name="username" placeholder="username" required>
-                    <input formControlName="password" type="password" id="password" name="password" placeholder="password" required>
-                    <input formControlName="confirmpass" type="password" id="confirm_password" name="confirm_password" placeholder="confirm password" required>
+                    <input formControlName="username" type="text" placeholder="Username" required>
+                    <input formControlName="password" type="password" placeholder="Password" required>
+                    <input formControlName="confirmpass" type="password" placeholder="Confirm Password" required>
                     <input formControlName="email" type="email" placeholder="E-mail" required>
                     <button type="submit">Sign Up</button>
                 </form>
-
             </mat-tab>
         </mat-tab-group>
 
+        <!-- Add Friend Form -->
+        <div *ngIf="user">
+            <h2>Add a Friend</h2>
+            <form (ngSubmit)="addFriend(Number(friendId.value))">
+                <input #friendId type="number" placeholder="Friend ID" required>
+                <button type="submit">Add Friend</button>
+            </form>
+        </div>
+
+        <!-- Remove Friend Form -->
+        <div *ngIf="user">
+            <h2>Remove a Friend</h2>
+            <form (ngSubmit)="removeFriend(Number(removeFriendId.value))">
+                <input #removeFriendId type="number" placeholder="Friend ID" required>
+                <button type="submit">Remove Friend</button>
+            </form>
+        </div>
     </div>
 </div>
+
+<!-- Add some basic styling -->
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .login-box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
