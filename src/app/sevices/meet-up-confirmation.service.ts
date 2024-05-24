@@ -1,21 +1,31 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { StreakDTO} from "../Models/streak-dto";
 
-@Injectable ()
+@Injectable({
+    providedIn: 'root'
+})
 export class MeetUpConfirmationServices {
-    broj: number = 50;
-    mssg: string = " Meet up streak is " + this.broj + " times ";
-    constructor() {}
+    private apiUrl = 'http://localhost:8080/api/streak';
 
-    public getAllStreaks(): string {
-        return this.mssg;
+    constructor(private http: HttpClient) {}
+
+    getAllStreaks(): Observable<StreakDTO[]> {
+        return this.http.get<StreakDTO[]>(`${this.apiUrl}/all`);
     }
 
-    public setBroj() {
-        this.broj += 1;
-        console.log(this.broj);
+    createStreak(streak: StreakDTO): Observable<StreakDTO> {
+        return this.http.post<StreakDTO>(`${this.apiUrl}/add`, streak);
     }
 
-    public getBroj(): number {
-        return this.broj;
+    updateStreak(id: number): Observable<StreakDTO> {
+        return this.http.put<StreakDTO>(`${this.apiUrl}/update/${id}`, {});
+    }
+
+    deleteStreak(id: number): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
     }
 }
+
+
