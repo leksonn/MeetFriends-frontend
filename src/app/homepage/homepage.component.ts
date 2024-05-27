@@ -1,13 +1,23 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
-import {Router} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
+import {AppModule} from "../app.module";
+import {CommonModule} from "@angular/common";
+import {MatButtonModule} from "@angular/material/button";
+import {ScheduleComponent} from "../schedule/schedule.component";
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
   standalone: true,
-  imports: [MatTabsModule],
+  imports: [
+    CommonModule,
+    MatTabsModule,
+    MatButtonModule,
+    RouterModule,
+    ScheduleComponent
+  ],
 })
 
 export class HomepageComponent implements OnInit{

@@ -1,0 +1,54 @@
+.schedule-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.schedule-header {
+    display: grid;
+    grid-template-columns: 50px repeat(7, 1fr); /* Adjusted to align with the body */
+    text-align: center;
+}
+
+.schedule-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    height: 50px;
+}
+
+.schedule-body {
+    display: grid;
+    grid-template-columns: 50px repeat(7, 1fr);
+    grid-template-rows: repeat(24, 50px);
+    gap: 1px;
+}
+
+.schedule-hour {
+    display: contents;
+}
+
+.hour-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    height: 50px;
+}
+
+.schedule-day {
+    display: contents;
+}
+
+.schedule-slot {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    height: 50px;
+}
+
+.schedule-slot.filled {
+    background-color: red;
+}
