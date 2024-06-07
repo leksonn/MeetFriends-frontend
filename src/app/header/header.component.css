@@ -1,42 +1,59 @@
 header {
-  padding: 20px;
+  padding: 20px 40px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(236, 109, 96, 0.72);
+  position: relative;
   z-index: 1000;
-  background-color: #92C7CF;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 h1 {
-  color: #FBF9F1;
   margin: 0;
+  font-size: 2em;
+  font-family: 'Arial', sans-serif;
+  color: #AFD198;
 }
 
-nav {
-  margin-top: 10px;
+.he {
+  color: rgba(236, 109, 96, 0.72);
 }
+
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+
 nav a {
-  color: #FBF9F1;
+  color: rgba(236, 109, 96, 0.72);
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 20px;
+  font-size: 1.2em;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
+  color: #AFD198;
   text-decoration: underline;
 }
-.link-without-decoration {
-  text-decoration: none;
-  color: inherit;
-}
+
 
 .active-link {
   font-weight: bold;
+  color: #AFD198;
 }
 
-a{
+a {
   cursor: pointer;
 }
-
-
-
