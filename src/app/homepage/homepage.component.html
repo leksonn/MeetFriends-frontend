@@ -1,27 +1,11 @@
-<mat-tab-group>
-    <mat-tab label="My schedule">
-        <div class="position">
-            <app-schedule></app-schedule>
-        </div>
-    </mat-tab>
-    <mat-tab label="Check Requests">
-        <div class="position">
-            <button class="dugme" mat-raised-button color="primary" (click)="redirectToCheck()">Do you have any new request?</button>
-        </div>
-    </mat-tab>
-    <mat-tab label="Send Request">
-        <div class="position">
-            <button class="dugme" mat-raised-button color="primary" (click)="redirectToSend()">Want to meet up?</button>
-        </div>
-    </mat-tab>
-    <mat-tab label="View Friends">
-        <div class="position">
-            <button class="dugme" mat-raised-button color="primary" (click)="redirectToFriends()">List of your friends</button>
-        </div>
-    </mat-tab>
-    <mat-tab label="My streak">
-        <div class="position">
-            <button class="dugme" mat-raised-button color="primary" (click)="redirectToMeetup()">Check Streak</button>
-        </div>
-    </mat-tab>
-</mat-tab-group>
+<div class="container">
+    <div class="button-section">
+        <button class="dugme" mat-raised-button  (click)="redirectToCheck()">Do you have any new requests?</button>
+        <button class="dugme" mat-raised-button  (click)="redirectToSend()">Want to meet up?</button>
+        <button class="dugme" mat-raised-button (click)="redirectToFriends()">List of your friends</button>
+        <button class="dugme" mat-raised-button  (click)="redirectToMeetup()">Check Streak</button>
+    </div>
+    <div class="main-content">
+        <app-schedule></app-schedule>
+    </div>
+</div>
