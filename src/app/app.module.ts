@@ -27,9 +27,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { ScheduleService } from "./sevices/schedule.service";
 import { AddFriendsComponent } from "./add-friends/add-friends.component";
 import { LoginComponent } from "./login/login.component";
-import { HomepageComponent } from './homepage/homepage.component'; // Import the standalone component
-import { ScheduleComponent } from './schedule/schedule.component'; // Import the standalone component
-import { DateFilterPipe } from "./pipes/date-filter.pipe"; // Import the standalone pipe
+import { HomepageComponent } from './homepage/homepage.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { DateFilterPipe } from "./pipes/date-filter.pipe";
 
 @NgModule({
     declarations: [

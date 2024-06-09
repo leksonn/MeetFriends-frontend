@@ -3,7 +3,7 @@
         <h1>Meet<span class="he">Friends</span></h1>
     </a>
 
-    <nav>
+    <nav *ngIf="!isLoginPage">
         <a routerLink="/addfriends"> Add friends </a>
         <a routerLink="/editprofile"> Edit profile </a>
         <a routerLink="/login"> Log Out </a>

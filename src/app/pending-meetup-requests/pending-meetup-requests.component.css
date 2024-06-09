@@ -1,0 +1,93 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+h1, h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+
+.create-form, .edit-form {
+    margin-top: 20px;
+}
+
+.create-form form div, .edit-form form div {
+    margin-bottom: 20px;
+}
+
+.create-form form label, .edit-form form label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+.create-form form input, .create-form form textarea,
+.edit-form form input, .edit-form form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-size: 1em;
+    background-color: #f5f5f5;
+    resize: vertical;
+}
+
+
+button {
+    padding: 15px;
+    background-color: rgba(236, 109, 96, 0.72);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+
+button:hover {
+    background-color: #AFD198;
+}

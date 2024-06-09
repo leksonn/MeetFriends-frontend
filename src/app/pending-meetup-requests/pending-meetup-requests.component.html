@@ -1,7 +1,6 @@
 <div class="container">
     <h1>Pending Meetup Requests</h1>
 
-    <!-- Create Request Form -->
     <div class="create-form">
         <h2>Create New Request</h2>
         <form (ngSubmit)="createRequest()">
@@ -27,7 +26,6 @@
         </form>
     </div>
 
-    <!-- Existing Requests Table -->
     <div *ngIf="requests.length === 0">
         <p>No requests available.</p>
     </div>
@@ -57,7 +55,6 @@
         </table>
     </div>
 
-    <!-- Edit Request Form -->
     <div *ngIf="editingRequest" class="edit-form">
         <h2>Edit Request</h2>
         <form (ngSubmit)="saveEdit()">
@@ -84,55 +81,3 @@
         </form>
     </div>
 </div>
-
-<!-- Add some basic styling -->
-<style>
-    .container {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    h1, h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-
-    th, td {
-        padding: 10px;
-        border: 1px solid #ccc;
-        text-align: left;
-    }
-
-    th {
-        background-color: #f4f4f4;
-    }
-
-    .create-form, .edit-form {
-        margin-top: 20px;
-    }
-
-    .create-form form div, .edit-form form div {
-        margin-bottom: 10px;
-    }
-
-    .create-form form label, .edit-form form label {
-        display: block;
-    }
-
-    .create-form form input, .create-form form textarea,
-    .edit-form form input, .edit-form form textarea {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-    }
-
-    .create-form form button, .edit-form form button {
-        margin-right: 10px;
-    }
-</style>
