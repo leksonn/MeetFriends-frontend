@@ -31,6 +31,7 @@ h1 {
 nav {
   display: flex;
   align-items: center;
+
 }
 
 
@@ -45,7 +46,7 @@ nav a {
 
 nav a:hover {
   color: #AFD198;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 

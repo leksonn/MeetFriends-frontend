@@ -1,34 +1,35 @@
-<div class="schedule-container">
-    <div class="schedule-header">
-        <div class="hour-label"></div> <!-- Placeholder for the top-left corner -->
-        <div class="schedule-day" *ngFor="let day of getDays()">
-            {{ day | date: 'EEE dd' }}
-        </div>
-    </div>
-    <div class="schedule-body">
-        <div class="schedule-hour" *ngFor="let hour of getHours()">
-            <div class="hour-label">{{ hour | date: 'ha' }}</div>
+<div class="container">
+    <h2>Weekly Schedule</h2>
+    <div class="schedule-container">
+        <div class="schedule-header">
+            <div class="hour-label"></div>
             <div class="schedule-day" *ngFor="let day of getDays()">
-                <div
-                        class="schedule-slot"
-                        [ngClass]="{'filled': isSlotFilled(day, hour)}"
-                        (click)="addSchedule(day, hour)"
-                >
-                    <!-- If needed, additional content can be added here, like schedule details -->
+                {{ day | date: 'EEE dd' }}
+            </div>
+        </div>
+        <div class="schedule-body">
+            <div class="schedule-hour" *ngFor="let hour of getHours()">
+                <div class="hour-label">{{ hour | date: 'ha' }}</div>
+                <div class="schedule-day" *ngFor="let day of getDays()">
+                    <div
+                            class="schedule-slot"
+                            [ngClass]="{'filled': isSlotFilled(day, hour), 'available': !isSlotFilled(day, hour)}"
+                            (click)="addSchedule(day, hour)"
+                    ></div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="add-schedule-form">
-        <h3>Add Schedule</h3>
-        <label>
-            Date:
-            <input type="date" [(ngModel)]="newScheduleDate">
-        </label>
-        <label>
-            Time:
-            <input type="time" [(ngModel)]="newScheduleTime">
-        </label>
-        <button (click)="createSchedule()">Add</button>
+        <div class="add-schedule-form">
+            <h3>Add to Schedule</h3>
+            <label>
+                Date:
+                <input type="date" [(ngModel)]="newScheduleDate">
+            </label>
+            <label>
+                Time:
+                <input type="time" [(ngModel)]="newScheduleTime">
+            </label>
+            <button (click)="createSchedule()">Add</button>
+        </div>
     </div>
 </div>

@@ -2,28 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
-  --mat-tab-header-inactive-label-text-color: rgb(14 7 7 / 60%);
-  --mat-tab-header-inactive-hover-label-text-color: rgba(25, 154, 183);
-  --mat-tab-header-active-label-text-color: rgba(5, 93, 117);
-  --mat-tab-header-active-ripple-color: #53d4bd;
-  --mat-tab-header-inactive-ripple-color: #43c7ca;
-  --mat-tab-header-active-focus-label-text-color: rgba(5, 93, 117);
-  --mdc-tab-indicator-active-indicator-color: #5cd4d8;
-  --mat-tab-header-active-focus-indicator-color: #5cd4d8;
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
-.position{
-  display: grid;
-  grid-template-columns:  1fr 1fr 1fr;
-  gap: 10px;
+.button-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.dugme{
-  grid-column-start: 2;
-  background-color:#5cd4d8;
+.main-content {
+  padding: 20px;
+}
+
+.dugme {
+  background-color: rgba(236, 109, 96, 0.72);
   border: none;
   color: white;
   padding: 10px 24px;
@@ -38,6 +40,6 @@
 }
 
 .dugme:hover {
-  background-color: #92C7CF;
+  background-color: #AFD198;
   color: white;
 }
