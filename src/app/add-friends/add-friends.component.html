@@ -1,17 +1,11 @@
-<div class="container">
-    <h2>Find Friends</h2>
-    <div class="form-group">
-        <label for="search">Search:</label>
-        <form [formGroup]="form" (ngSubmit)="submitSearch()" >
+<form [formGroup]="form" (ngSubmit)="submitSearch()">
+    <label for="username">Username</label>
+    <input id="username" formControlName="username">
+    <button type="submit">Search</button>
+</form>
 
-            <input formControlName="username" type="text" id="search" placeholder="Search by username" required>
-        <button type="submit">Search</button>
-        </form>
-    </div>
-    <div class="search-results" id="searchResults">
-    </div>
-</div>
+<ul *ngIf="searchResults.length > 0">
+    <li *ngFor="let result of searchResults">{{ result.username }}</li>
+</ul>
 
-
-
-
+<p *ngIf="searchResults.length === 0">No users found</p>

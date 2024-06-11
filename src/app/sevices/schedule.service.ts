@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ScheduleDTO } from '../Models/schedule-dto';
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -16,7 +17,7 @@ export class ScheduleService {
     }
 
     getUserSchedules(userId: number): Observable<ScheduleDTO[]> {
-        return this.http.get<ScheduleDTO[]>(`${this.apiUrl}/${userId}`);
+        return this.http.get<ScheduleDTO[]>(`${this.apiUrl}/user/${userId}`);
     }
 
     addSchedule(schedule: ScheduleDTO): Observable<ScheduleDTO> {

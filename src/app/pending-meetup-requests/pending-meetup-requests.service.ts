@@ -1,34 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RequestDTO } from "../Models/request-dto";
+import { RequestDTO } from '../Models/request-dto';
+
 
 @Injectable({
     providedIn: 'root'
 })
-export class RequestService {
-    private apiUrl = 'http://localhost:8080/api/requests';
+export class PendingMeetupRequestsService {
+    private apiUrl = 'http://localhost:8080/api/request';
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {}
 
     getRequests(): Observable<RequestDTO[]> {
-        return this.http.get<RequestDTO[]>(this.apiUrl);
+        return this.http.get<RequestDTO[]>(`${this.apiUrl}/all`);
     }
 
-    getRequestById(id: number): Observable<RequestDTO> {
-        return this.http.get<RequestDTO>(`${this.apiUrl}/${id}`);
+    getUserRequests(userId: number): Observable<RequestDTO[]> {
+        return this.http.get<RequestDTO[]>(`${this.apiUrl}/user/${userId}`);
     }
 
-    createRequest(request: RequestDTO): Observable<void> {
-        return this.http.post<void>(this.apiUrl, request);
+    createRequest(request: RequestDTO): Observable<RequestDTO> {
+        return this.http.post<RequestDTO>(`${this.apiUrl}/add`, request);
     }
 
-    updateRequest(request: RequestDTO): Observable<void> {
-        return this.http.put<void>(this.apiUrl, request);
+    updateRequest(request: RequestDTO): Observable<RequestDTO> {
+        if (request.id === null) {
+            throw new Error('Cannot update a request without an ID.');
+        }
+        return this.http.put<RequestDTO>(`${this.apiUrl}/update`, request);
     }
 
     deleteRequest(id: number): Observable<void> {
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);
+        return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
     }
 }
-

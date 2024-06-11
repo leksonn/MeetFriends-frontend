@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { ScheduleService} from "../sevices/schedule.service";
-import { ScheduleDTO } from '../Models/schedule-dto';
 import { DateFilterPipe } from '../pipes/date-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ScheduleDTO } from '../Models/schedule-dto';
+import { ScheduleService } from '../sevices/schedule.service';
+import { AuthService } from '../Auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -19,15 +21,26 @@ import { FormsModule } from '@angular/forms';
 })
 export class ScheduleComponent implements OnInit {
   schedules: ScheduleDTO[] = [];
-  userId: number = 1; // Replace with actual user ID
+  userId: number = 0; // Initialize userId
   currentWeekStart: Date = this.getStartOfWeek(new Date());
   newScheduleDate: string = ''; // Initialize as empty string
   newScheduleTime: string = ''; // Initialize as empty string
 
-  constructor(private scheduleService: ScheduleService) {}
+  constructor(private scheduleService: ScheduleService, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loadUserSchedules();
+    const token = this.authService.getToken();
+    if (token) {
+      const user = this.authService.getUserFromToken(token);
+      if (user) { // Add null check
+        this.userId = user.id;
+        this.loadUserSchedules();
+      } else {
+        this.router.navigate(['/login']); // Redirect to login if user is null
+      }
+    } else {
+      this.router.navigate(['/login']); // Redirect to login if not authenticated
+    }
   }
 
   loadUserSchedules(): void {

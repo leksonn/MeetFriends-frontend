@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { StreakDTO} from "../Models/streak-dto";
+import { StreakDTO } from '../Models/streak-dto';
+
 
 @Injectable({
     providedIn: 'root'
@@ -13,6 +14,10 @@ export class MeetUpConfirmationServices {
 
     getAllStreaks(): Observable<StreakDTO[]> {
         return this.http.get<StreakDTO[]>(`${this.apiUrl}/all`);
+    }
+
+    getUserStreaks(userId: number): Observable<StreakDTO[]> {
+        return this.http.get<StreakDTO[]>(`${this.apiUrl}/user/${userId}`);
     }
 
     createStreak(streak: StreakDTO): Observable<StreakDTO> {
@@ -27,5 +32,3 @@ export class MeetUpConfirmationServices {
         return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
     }
 }
-
-

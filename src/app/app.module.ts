@@ -21,16 +21,17 @@ import { MeetUpConfirmationServices } from "./sevices/meet-up-confirmation.servi
 import { LoginService } from './sevices/login.service';
 import { FriendlistService } from "./sevices/friendlist.service";
 import { FriendlistComponent } from './friendlist/friendlist.component';
-import { RequestService } from "./pending-meetup-requests/pending-meetup-requests.service";
+import { PendingMeetupRequestsService } from "./pending-meetup-requests/pending-meetup-requests.service";
 import { AddFriendsService } from "./sevices/add-friends.service";
-import { HttpClientModule } from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ScheduleService } from "./sevices/schedule.service";
 import { AddFriendsComponent } from "./add-friends/add-friends.component";
 import { LoginComponent } from "./login/login.component";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { DateFilterPipe } from "./pipes/date-filter.pipe";
-
+import { AuthInterceptor } from './Auth/auth.interceptor';
+import { RequestService } from './sevices/request.service';
 @NgModule({
     declarations: [
         AppComponent,
@@ -61,15 +62,17 @@ import { DateFilterPipe } from "./pipes/date-filter.pipe";
         DateFilterPipe // Import standalone pipe
     ],
     providers: [
+        {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         provideClientHydration(),
         provideAnimationsAsync(),
         provideNativeDateAdapter(),
         MeetUpConfirmationServices,
-        RequestService,
+        PendingMeetupRequestsService,
         LoginService,
         FriendlistService,
         AddFriendsService,
-        ScheduleService
+        ScheduleService,
+        RequestService,
     ],
     bootstrap: [AppComponent]
 })

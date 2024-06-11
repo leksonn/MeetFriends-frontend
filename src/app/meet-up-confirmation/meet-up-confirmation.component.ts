@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { MeetUpConfirmationServices} from "../sevices/meet-up-confirmation.service";
-import { StreakDTO} from "../Models/streak-dto";
+import { Router } from '@angular/router';
+import { StreakDTO } from '../Models/streak-dto';
+import { MeetUpConfirmationServices } from '../sevices/meet-up-confirmation.service';
+import { AuthService } from '../Auth/auth.service';
 
 @Component({
   selector: 'app-meet-up-confirmation',
@@ -13,11 +15,27 @@ export class MeetUpConfirmationComponent implements OnInit, OnDestroy {
   destroy$: Subject<any> = new Subject<any>();
   streaks: StreakDTO[] = [];
   currentStreak: StreakDTO | null = null;
+  userId: number = 0; // Initialize userId
 
-  constructor(private service: MeetUpConfirmationServices) {}
+  constructor(
+      private service: MeetUpConfirmationServices,
+      private authService: AuthService,
+      private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.loadStreaks();
+    const token = this.authService.getToken();
+    if (token) {
+      const user = this.authService.getUserFromToken(token);
+      if (user) {
+        this.userId = user.id;
+        this.loadStreaks();
+      } else {
+        this.router.navigate(['/login']); // Redirect to login if user is null
+      }
+    } else {
+      this.router.navigate(['/login']); // Redirect to login if not authenticated
+    }
   }
 
   ngOnDestroy(): void {
@@ -26,7 +44,7 @@ export class MeetUpConfirmationComponent implements OnInit, OnDestroy {
   }
 
   loadStreaks(): void {
-    this.service.getAllStreaks().pipe(takeUntil(this.destroy$)).subscribe((data) => {
+    this.service.getUserStreaks(this.userId).pipe(takeUntil(this.destroy$)).subscribe((data) => {
       console.log('Streaks loaded', data);
       this.streaks = data;
       this.currentStreak = this.streaks.length > 0 ? this.streaks[0] : null;
@@ -41,7 +59,7 @@ export class MeetUpConfirmationComponent implements OnInit, OnDestroy {
         this.currentStreak = updatedStreak;
       });
     } else {
-      const newStreak: StreakDTO = { id: null, streak: 1, user1: 'user1', user2: 'user2' }; // replace 'user1' and 'user2' with actual values
+      const newStreak: StreakDTO = { id: null, streak: 1, user1: this.userId.toString(), user2: 'user2' }; // replace 'user2' with actual value
       console.log('Creating new streak', newStreak);
       this.service.createStreak(newStreak).pipe(takeUntil(this.destroy$)).subscribe((createdStreak) => {
         console.log('Streak created', createdStreak);
